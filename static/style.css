@@ -1,0 +1,201 @@
+/* ====== Steam Market Inspired Theme ====== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Motiva Sans", Arial, Helvetica, sans-serif;
+  background: #1b2838;          /* Steam dark blue */
+  color: #c7d5e0;
+  min-height: 100vh;
+}
+
+/* ---- Header ---- */
+.topbar {
+  background: linear-gradient(to right, #171a21, #1b2838);
+  padding: 14px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+.brand { display: flex; align-items: center; gap: 10px; }
+.logo {
+  background: #66c0f4;
+  color: #1b2838;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 3px;
+}
+.brand-text {
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+.topbar-right { color: #8f98a0; font-size: 13px; }
+
+/* ---- Search Section ---- */
+.search-section {
+  max-width: 1100px;
+  margin: 30px auto 10px auto;
+  padding: 20px;
+  background: #2a475e;
+  border-radius: 4px;
+  border: 1px solid #000;
+}
+.search-wrapper {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+#searchInput {
+  flex: 1 1 280px;
+  padding: 10px 14px;
+  background: #316282;
+  color: #ffffff;
+  border: 1px solid #000;
+  border-radius: 3px;
+  font-size: 14px;
+}
+#searchInput::placeholder { color: #b8c6d1; }
+
+select {
+  padding: 10px 12px;
+  background: #316282;
+  color: #ffffff;
+  border: 1px solid #000;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#searchBtn {
+  padding: 10px 22px;
+  background: linear-gradient(to bottom, #67c1f5 5%, #417a9b 95%);
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+#searchBtn:hover {
+  background: linear-gradient(to bottom, #7cc8f5 5%, #4d8ab0 95%);
+}
+
+.result-info {
+  margin-top: 12px;
+  color: #8f98a0;
+  font-size: 13px;
+}
+
+/* ---- Results Table ---- */
+main {
+  max-width: 1100px;
+  margin: 0 auto 40px auto;
+  padding: 0 20px;
+}
+.market-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #16202d;
+  border: 1px solid #000;
+}
+.market-table thead {
+  background: #2a475e;
+}
+.market-table th {
+  text-align: left;
+  padding: 12px 14px;
+  color: #ffffff;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #000;
+}
+.market-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #000;
+  vertical-align: middle;
+  font-size: 14px;
+}
+.market-table tbody tr {
+  background: #2a3f5a;
+  transition: background 0.15s ease;
+}
+.market-table tbody tr:nth-child(even) { background: #233448; }
+.market-table tbody tr:hover { background: #3a5775; cursor: pointer; }
+
+.col-img    { width: 90px; }
+.col-price  { width: 140px; text-align: right; }
+.col-rarity { width: 130px; }
+.col-wear   { width: 130px; }
+
+.skin-img {
+  width: 80px;
+  height: 60px;
+  object-fit: contain;
+  background: #1b2838;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+
+.skin-name {
+  color: #ffffff;
+  font-weight: 600;
+}
+.skin-weapon {
+  display: block;
+  color: #8f98a0;
+  font-size: 12px;
+  font-weight: normal;
+  margin-top: 2px;
+}
+
+.price {
+  color: #beee11;     /* Steam Market green */
+  font-weight: bold;
+  text-align: right;
+  font-size: 15px;
+}
+
+/* Rarity badge colors — match CS2 official tier colors */
+.rarity-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.rarity-Consumer    { background: #b0c3d9; color: #000; }
+.rarity-Industrial  { background: #5e98d9; }
+.rarity-Mil-Spec    { background: #4b69ff; }
+.rarity-Restricted  { background: #8847ff; }
+.rarity-Classified  { background: #d32ce6; }
+.rarity-Covert      { background: #eb4b4b; }
+.rarity-Contraband  { background: #e4ae39; color: #000; }
+
+/* ---- Footer ---- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #171a21;
+  color: #8f98a0;
+  font-size: 12px;
+  border-top: 1px solid #000;
+}
+
+.no-results {
+  text-align: center;
+  padding: 40px;
+  color: #8f98a0;
+  font-style: italic;
+}
+
+@media (max-width: 700px) {
+  .col-wear, .col-rarity { display: none; }
+  .search-wrapper { flex-direction: column; }
+}
